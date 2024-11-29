@@ -107,7 +107,7 @@ export default function Fighter() {
 
   return (
     <div className="container">
-      <IonTitle>Pelea por: {fightType} </IonTitle>
+      <IonTitle className="fight-title">Pelea por: {fightType} </IonTitle>
       <div className="game-container">
         <FighterContainer fighter={fighter1}/>
         <FighterContainer fighter={fighter2}/>

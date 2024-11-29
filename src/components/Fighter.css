@@ -15,14 +15,7 @@
     justify-content: space-evenly;
     width: 100%;
 }
-.game-container h2 {
-    color: red;
-    font-style: italic;
-}
-.game-container img {
-    width: 18rem;
-}
-.game-container h3 {
-    color: white;
-}
 
+.fight-title {
+    font-size: 3rem;
+}
