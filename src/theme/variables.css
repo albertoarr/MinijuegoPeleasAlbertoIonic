@@ -1,7 +1,7 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
 
-.ion-page {
+ion-page {
     margin: auto 0;
     padding: 0;
     background-color: rgb(201, 195, 195);
@@ -9,7 +9,7 @@ http://ionicframework.com/docs/theming/ */
     background-size: cover;
     place-items: center;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    font-weight: 100;
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
   }
