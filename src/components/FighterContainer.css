@@ -1,0 +1,30 @@
+.fighter-container {
+    display: flex;
+    padding-bottom: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.dice-container {
+    display: flex;
+    gap: 5rem;
+}
+.dice-container img {
+    width: 100px;
+}
+
+.health-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.health-container img {
+    width: 4rem;
+    padding: 1rem;
+    padding-bottom: 0px;
+}

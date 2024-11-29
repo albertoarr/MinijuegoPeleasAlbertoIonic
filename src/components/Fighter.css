@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+}
+
+.game-container {
+    display:flex;
+    justify-content: space-evenly;
+    width: 80vh;
+    border: 0px solid white;
+}
+.game-container h2 {
+    color: red;
+    font-style: italic;
+}
+.game-container img {
+    width: 18rem;
+}
+.game-container h3 {
+    color: white;
+}
+
