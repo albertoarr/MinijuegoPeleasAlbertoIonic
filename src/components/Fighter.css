@@ -1,17 +1,19 @@
 .container {
     display: flex;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vh;
-    height: 100vh;
+    background-image: url('/fondo.jpg');
+    background-size: cover;
+    color: aliceblue;
 }
 
 .game-container {
+    padding-bottom: 20px;
     display:flex;
     justify-content: space-evenly;
-    width: 80vh;
-    border: 0px solid white;
+    width: 100%;
 }
 .game-container h2 {
     color: red;

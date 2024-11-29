@@ -1,0 +1,13 @@
+.container0 {
+  position: relative;
+  width: 100%;
+}
+
+.container0 ion-img {
+  position: absolute;
+  z-index: 1;
+}
+
+.container0 > div {
+  z-index: 10;
+}

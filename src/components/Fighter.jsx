@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Fighter.css";
 import FighterContainer from "./FighterContainer";
-
+import { IonButton, IonTitle } from "@ionic/react"
 
 export default function Fighter() {
 
@@ -107,15 +107,15 @@ export default function Fighter() {
 
   return (
     <div className="container">
-      <h1>Pelea por: {fightType} </h1>
+      <IonTitle>Pelea por: {fightType} </IonTitle>
       <div className="game-container">
         <FighterContainer fighter={fighter1}/>
         <FighterContainer fighter={fighter2}/>
       </div>
       <div className="game-container">
-      <button onClick={newFight}>Comenzar</button>
-      <button onClick={resolveFight}>¡Pelea!</button>
-      <button onClick={newGame}>Nueva Partida</button>
+      <IonButton onClick={newFight}>Comenzar</IonButton>
+      <IonButton onClick={resolveFight}>¡Pelea!</IonButton>
+      <IonButton onClick={newGame}>Nueva Partida</IonButton>
       </div>
     </div>
   );
