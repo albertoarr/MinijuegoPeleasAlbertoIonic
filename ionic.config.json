@@ -1,0 +1,7 @@
+{
+  "name": "MinijuegoPeleasAlbertoIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
