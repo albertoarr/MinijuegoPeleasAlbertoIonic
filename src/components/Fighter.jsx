@@ -11,7 +11,8 @@ export default function Fighter() {
   /* Estados de los peleadores a partir de p1 y p2 */
   const [fighter1, setFighter1] = useState(p1);
   const [fighter2, setFighter2] = useState(p2);
-
+  /* Luchador ganador */
+  let winner;
 
   /* Tipo actual de pelea */
   const [fightType, setFightType] = useState("");
@@ -63,14 +64,14 @@ export default function Fighter() {
     const statFighter1 = randInt1 + p1[statName]
     const statFighter2 = randInt2 + p2[statName]
 
-    /* 
-    * Se actualizan los estados de los luchadores (dado y estadística)
-    */
     reStatFighters(randInt1, statName, statFighter1, randInt2, statFighter2);
     
     postFightHealth(statFighter1, statFighter2);
+
+    winCheck(fighter1, fighter2)
   }
 
+  // Esta función actualiza las estadísticas para una nueva pelea
   function reStatFighters(randInt1, statName, statFighter1, randInt2, statFighter2) {
     setFighter1((fighter1) => ({
       ...fighter1,
@@ -100,6 +101,14 @@ export default function Fighter() {
     } else {
       setFightType("Empate");
     }
+  }
+
+  function winCheck(fighter1, fighter2) {
+    if (fighter1.health < 1)
+      winner = fighter2
+    else if (fighter2.health < 1) {
+      winner = fighter1
+    }    
   }
 
   // Función que reinicia los valores para una nueva partida
