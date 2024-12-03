@@ -8,17 +8,17 @@ export default function Fighter() {
   /* Estadísticas iniciales de los peleadores */
   const p1 = {dice: 0, name: "Julio", health: 3, pereza: 85, maldad: 120, chepa: 75, image: "./julio.jpg"};
   const p2 = {dice: 0, name: "Vito", health: 3, pereza: 95, maldad: 70, chepa: 100, image: "./vito.png"};
-
-  /* Estados de los peleadores */
+  /* Estados de los peleadores a partir de p1 y p2 */
   const [fighter1, setFighter1] = useState(p1);
   const [fighter2, setFighter2] = useState(p2);
 
+
   /* Tipo actual de pelea */
   const [fightType, setFightType] = useState("");
-
   /* Tipos de pelea */
   const fightTypes = ["Pereza", "Maldad", "Chepa"];
 
+  // Esta función inicia una nueva pelea
   function newFight() {
     /* Elige un número entre 0 y 2 para el tipo de pelea*/
     const fightRandIndex = Math.floor(Math.random() * 3);
@@ -36,6 +36,7 @@ export default function Fighter() {
     }));
   }
 
+  // Esta función se ejecuta para terminar una pelea
   function resolveFight() {
     switch (fightType) {
       case "Pereza":
@@ -53,6 +54,7 @@ export default function Fighter() {
     }
   }
 
+  // Esta función cambia las estadísticas para una nueva pelea (se usa en resolveFight())
   function changeStats(statName) {
     /* Cálculo de los números de los dados */
     const randInt1 = Math.floor(Math.random() * 100)
@@ -64,6 +66,12 @@ export default function Fighter() {
     /* 
     * Se actualizan los estados de los luchadores (dado y estadística)
     */
+    reStatFighters(randInt1, statName, statFighter1, randInt2, statFighter2);
+    
+    postFightHealth(statFighter1, statFighter2);
+  }
+
+  function reStatFighters(randInt1, statName, statFighter1, randInt2, statFighter2) {
     setFighter1((fighter1) => ({
       ...fighter1,
       dice: randInt1,
@@ -75,10 +83,10 @@ export default function Fighter() {
       dice: randInt2,
       [statName]: statFighter2,
     }));
+  }
 
-    /*
-    * Se calcula quién pierde la vida en la pelea (dependiendo de la stat mayor)
-    */ 
+  // Esta función calcula las vidas después de una pelea
+  function postFightHealth(statFighter1, statFighter2) {
     if (statFighter1 < statFighter2) {
       setFighter1((fighter1) => ({
         ...fighter1,
@@ -94,7 +102,7 @@ export default function Fighter() {
     }
   }
 
-  /* Función que reinicia los valores cuando en nueva partida */
+  // Función que reinicia los valores para una nueva partida
   function newGame() {
     /* Reset de modalidad de pelea*/
     setFightType("");
