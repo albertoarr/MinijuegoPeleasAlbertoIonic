@@ -6,12 +6,6 @@ const Home: React.FC = () => {
   return (
     <IonPage className='ion-page'>
       <IonContent fullscreen className="ion-page">
-        {/*<div className="container0">
-          <IonImg
-            src="/fondo.jpg"
-          />
-          <Fighter />
-        </div>*/}
         <Fighter />
       </IonContent>
     </IonPage>
