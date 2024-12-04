@@ -19,3 +19,9 @@
 .fight-title {
     font-size: 3rem;
 }
+
+ion-button:disabled { /* Utilizo la propiedad disabled de ion-button para activar esta clase css*/ 
+    --background: #ccc;
+    --color: #666;
+    --opacity: 0.666;
+  }
